@@ -1,0 +1,91 @@
+\section*{Set Theory}
+
+\begin{definition}[Sample Space]
+	The set $S$, of all possible outcomes of a particular experiment is called the \textbf{sample space} for the experiment.
+	\label{Sample Space}
+\end{definition}
+
+Notation: Sample Space $= S = \Omega$
+
+Example: Single coin flip. $S = \{H,T\}$
+
+\begin{definition}[Event]
+	An \textbf{event} is any collection of possible outcomes of an experiment. That is, any possible subset of $S$ (including $S$ itself).
+\end{definition}
+
+Example: An experiment where a coin is flipped two times consequtively.
+
+$S = \left\{ HH,HT,TH,TT \right\}$
+
+Let $A = \text{First flip is heads} = \left\{ HH, HT \right\}$
+
+\subsection*{Elementary Set Operations}
+
+\begin{definition}[Union]
+	The \textbf{union} of $A$ and $B$ are the set of elements that belong to either $A$ OR $B$.
+\end{definition}
+
+Notation: $A \cup B$
+
+$A \cup B = \left\{ x:x\in A or x \in B \right\}$
+
+\begin{definition}[Intersection]
+	The \textbf{intersection} of $A$ and $B$ are the set of elements that belong to both $A$ AND $B$.
+\end{definition}
+
+Notation: $A \cap B$
+
+$A \cap B = \left\{ x: x \in A and x \in B \right\}$
+
+\begin{definition}[Complement]
+	The \textbf{complement} of $A$ is the set of all elements not in $A$.
+\end{definition}
+
+Notation: $A^c$
+
+$A^c = \left\{ x: x \notin A \right\}$
+
+
+\begin{theorem}
+	1.1.4: Useful Set Properties
+
+	For any events $A, B, C$, defined on a sample space $S$.
+
+	Commutativity:
+
+	\begin{align*}
+		A \cup B &= B \cup A\\
+		A \cap B &= B \cap A
+	\end{align*}
+
+	Associativity:
+
+	\begin{align*}
+		A \cup (B \cup C) &= (A \cup B) \cup C \\
+		A \cap (B \cap C) &= (A \cap B) \cap C
+	\end{align*}
+
+	Distributive Laws:
+
+	\begin{align*}
+		A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) \\
+		A \cup (B \cap C) &= (A \cup B) \cap (A \cup C)
+	\end{align*}
+
+	DeMorgan's Laws:
+
+	\begin{align*}
+		A \cup (B \cup C) &= (A \cup B) \cup C \\
+		A \cap (B \cap C) &= (A \cap B) \cap C
+	\end{align*}
+
+\end{theorem}
+
+\begin{definition}[Disjoint, Pairwise Disjoint]
+	Two events $A$ and $B$ are disjoint or mutually exclusive if $A \cap B = \emptyset$. The events $A_1, A_2, \cdots$ are pairwise disjoint if $A_i \cap A_j = \emptyset \; \forall \; i \neq j$
+	
+\end{definition}
+
+\begin{definition}[Partition]
+	If $A_1, A_2, \cdots$ are pairwise disjoint and $\cup_{i=1}^{\infty} A_i = S$ then the collection $A_1, A_2, \cdots$ forms a partition of $S$.
+\end{definition}
