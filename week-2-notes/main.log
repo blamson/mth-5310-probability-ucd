@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  2 SEP 2024 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  5 SEP 2024 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -26,12 +26,7 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-)
-
-LaTeX Warning: \include should only be used after \begin{document} on input lin
-e 6.
-
-(./preamble.tex
+) (./preamble.tex
 (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/fancyhdr/fanc
 yhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
@@ -155,41 +150,60 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (./section_1.tex [1{/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fon
-ts/map/pdftex/updmap/pdftex.map}
 
-])
-(./section_2.tex) [2] (./main.aux)
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 15.
+
+[1{/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/pdftex/updm
+ap/pdftex.map}
+
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+85.
+
+(/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/omscmr.f
+d
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+ [4] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1457 strings out of 474116
- 22316 string characters out of 5733619
+ 1464 strings out of 474116
+ 22551 string characters out of 5733619
  1937187 words of memory out of 5000000
- 23859 multiletter control sequences out of 15000+600000
- 560746 words of font info for 45 fonts, out of 8000000 for 9000
+ 23870 multiletter control sequences out of 15000+600000
+ 560387 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,70p,242b,314s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,12n,68p,346b,227s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/homebrew/Cel
-lar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20240312/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/tex
-live/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/
-homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 124656 bytes).
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cella
+r/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20240312/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texl
+ive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/hom
+ebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr7.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/2024
+0312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/C
+ellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
+fb>
+Output written on main.pdf (4 pages, 157794 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

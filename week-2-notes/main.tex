@@ -1,0 +1,199 @@
+%        File: main.tex
+%     Created: Tue Sep 03 12:00 PM 2024 M
+% Last Change: Tue Sep 03 12:00 PM 2024 M
+%
+\documentclass[a4paper]{article}
+\input{preamble.tex}
+\begin{document}
+\section*{Counting}
+
+**Permutation**: $n!$
+
+Choosing $r$ of $n$:
+
+$$
+{n \choose r} = \frac{n!}{r!(n-r)}
+$$
+
+Two big things to consider: Does order matter or does it not?
+
+When order doesn't matter, say a set of Bob, Jennifer and Greg are selected. We don't care who was picked 1st 2nd or 3rd.
+
+Few situations to consider:
+
+Ordered w/o replacement: $\frac{n!}{(n-r)!}$
+
+Ordered w/ replacement: $n^r$
+
+How many possible license plates in Colorado? They follow the rule of 3 letters followed by 3 numbers. Order matters. ABC123 is different from ACB321.
+
+26 letters, 10 numbers.
+
+\[26 \cdot 26 \cdot 26 \cdot 10 \cdot 10 \cdot 10 = 26^3 \cdot 10^3\]
+
+We can simplify this down to $n^r$. Where $n$ is the number of possibilities and $r$ represents the number of times it happens.
+
+Unordered w/o replacement: $n \choose r$
+
+17 students, how many ways to choose 3? $17 \choose 3$
+
+Unordered w/ replacement:
+
+Example: 10k and will divide it up (in units of 1k) to 3 students. 17 students total.
+
+How many ways can you do this?
+
+Note: Study this one in the link provided on notion
+
+\[
+	{n+r-1 \choose r-1} OR {n+r-1 \choose }
+\]
+
+\begin{table}[ht]
+\begin{tabular}{|l|l|l|}
+\hline
+          & w/o replacement & \multicolumn{1}{l|}{w/ replacement} \\ \hline
+ordered   & $\frac{n!}{(n-r)!}$    & $n^r$                       \\ \hline
+unordered & $n \choose r$   & ${n+r-1 \choose r-1} OR {n+r-1 \choose r}$  \\ \hline
+\end{tabular}
+\end{table}
+
+What we are really talking about here is the denominator of probabilities.
+
+These help us figure out how many possible outcomes we can get in a situation. Is P(subset of those scenarios) occuring. 
+
+Example: If all possibilities $(n)$ are equally likely:
+
+\begin{align*}	
+	P(A) &= \sum_{s_i \in A} P(\left\{ s_i \right\}) \\
+	&= \sum_{s_i \in A} \frac{1}{n} \\
+	&= \frac{\text{\# of elements of A}}{\text{\# of elements of S}}
+\end{align*}
+
+Fill in notes from photos here
+
+Neat trick for approximating factorials: $n! \approx \sqrt{2\pi} (n)^{n+0.5}e^{-n}$
+
+\section*{Conditional Probability}
+
+\begin{definition}[1.3.2]
+	If $A \& B$ are events in $S$ and $P(B) > 0$, then conditional probability of $A$ given $B$
+
+	\[P(A|B) = \frac{P(A\cap B)}{P(B)}\]
+\end{definition}
+
+\subsection{Example}
+
+- Setup:
+
+- A drug has the side effect of insomnia 14\% of patients. 
+
+- 5\% have both insomnia and headaches.
+
+- $P(\text{headaches}|\text{insomnia}) = ?$
+
+- Just having headaches=h and insomnia=i for efficiency.
+
+\begin{align*}
+	P(\text{headaches}|\text{insomnia}) &= ? \\
+	&= \frac{P(h \cap i)}{P(i)} \\
+	&= \frac{0.05}{0.14} \\
+	&\approx 0.3571
+\end{align*}
+
+\subsection{Example}
+
+- Setup:
+
+- $T$ is the lifetime of a product.
+
+- $P(T \geq t)$ where $T$ is a random variable and $t$ is the specifica value of interest.
+
+- $P(T \geq t) = e^{\frac{-t}{5}}$. This equality is given by the professor, still part of setup.
+
+- This is from the exponential family of random variables.
+
+- Given a product survives 2 years, what is the probability it fails by year 3. 
+
+\begin{align*}
+	\frac{P(2 \leq T \leq 3)}{P(2 \leq T)} &= ? \\
+	&= \frac{P(T \geq 2) - P(T \geq 3)}{P(T \geq 2)} \\
+	&= \frac{e^{-2/5} - e^{-3/5}}{e^{-2/5}}
+\end{align*}<++>
+
+\pagebreak
+
+\begin{theorem}[Bayes Rule]
+	Let $A_1, A_2, \cdots$ be a partition of $S$ and let $B$ represent any set.
+
+	\[P(A_i | B) = \frac{P(B | A_i) P(A_i)}{\sum_{j=1}^{\infty}P(B|A_j)P(A_j)}\]
+\end{theorem}
+
+Some thoughts. The $A_i$ in the numerator functions as your \textbf{prior}. Some knowledge you're taking into this experiment. You have some belief about what you're ultimately trying to talk about. And then you UPDATE it, or SCALE it, by the rest of the fraction. So you're essentialy rescaling your prior!
+
+
+\[P(A_i | B) = \frac{P(B | A_i)}{\sum_{j=1}^{\infty}P(B|A_j)P(A_j)} \cdot P(A_i)\]
+
+And then, $P(A_i | B)$ is what's called your \textbf{posterior}. 
+
+This is so critical let's derive the proof. I will do my best to keep up.
+
+\subsection*{Background before proof: Law of Total Probability}
+
+Suppose events $A_1, A_2, \cdots$ satisfy these conditions:
+
+1. $S = A_1 \cup A_2 \cup \cdots$ 
+
+2. $A_i \cap A_j = \emptyset \forall i \neq j$
+
+3. $P(A_i) > 0$ for $i=1,2,\cdots$
+
+Then $A_1, A_2, \cdots$ partitions $S$ for any event $B$:
+
+\[P(B) = \sum_{j=1}^{\infty}P(B|A_j)(PA_j)\]
+
+\subsection{Background fact 2}
+
+Note: Just flipping the equality for conditional probability around here.
+
+(i)
+
+\[P(A_i \cap B) = P(A_i)P(B|A_i)\]
+
+(ii)
+
+\[P(A_i \cap B) = P(B)P(A_i|B)\]
+
+Note that (i) and (ii) are equal representations of the same thing! Therefore we can do some algebra to finally derive baye's theorem.
+
+\begin{align*}
+	i\&ii \implies \frac{P(A_i | B) P(B)}{P(B)} = \frac{P(B|A_i)P(A_i)}{P(B)}
+\end{align*}
+
+If this equality is confusing, we set (i) and (ii) equal, then do some algebra to m
+
+fuckkkkkkkkk i fell behind fklsdflsjdfsdjfsadjfsjdlkfjalsjfddlf
+
+P(B) look at law of total probability, wow look it's baye's theorem wowee
+
+\section*{Example}
+
+Rare disease testing 
+
+$A = $ Has disease. And $P(A) = \frac{1}{10000}$
+
+$B = $ \{Test positive. Properties of $B$: Test is correct $90\%$ of the time if the person has the disease. Test is correct $99\%$ of the time if the person doesn't have the disease.\}
+
+To explain a little more w/ notation: $P(B | A) = 0.90$. Given the person has the disease, the test will be positive $90\%$ of the time.
+
+$P(B^c|A^c) = 0.999$
+$P(B|A^c) = 1-0.999$
+
+\begin{align*}
+	P(A|B) &= \frac{P(B|A) P(A)}{P(B|A) P(A) + P(B|A^c)P(A^c)} \\
+	&= \frac{0.9 \cdot \frac{1}{10000}}{0.9 \cdot \frac{1}{10000} + (1-.999) \cdot \frac{9999}{10000}}
+\end{align*}<++>
+
+\end{document}
+
+
