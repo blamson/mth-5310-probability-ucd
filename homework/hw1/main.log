@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  7 SEP 2024 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  7 SEP 2024 21:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -159,13 +159,18 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (./1.1.tex)
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 7--11
+ (./1.1.tex) (./1.2.tex
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 7--1
 []
  []
 
-[1{/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/pdftex/updm
-ap/pdftex.map}
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--1
+
+ []
+
+) [1{/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/pdftex/up
+dmap/pdftex.map}
 
 ] (./2.1.4.tex) (./2.1.11.tex [2]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 6--16
@@ -179,13 +184,13 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1503 strings out of 474116
- 23250 string characters out of 5733619
- 1932187 words of memory out of 5000000
- 23899 multiletter control sequences out of 15000+600000
+ 1509 strings out of 474116
+ 23315 string characters out of 5733619
+ 1933187 words of memory out of 5000000
+ 23902 multiletter control sequences out of 15000+600000
  560387 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,11n,70p,291b,227s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,11n,70p,736b,227s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312/
@@ -199,7 +204,7 @@ ve/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/ho
 mebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy7.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (3 pages, 121749 bytes).
+Output written on main.pdf (3 pages, 122769 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
