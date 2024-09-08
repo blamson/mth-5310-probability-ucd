@@ -1,0 +1,53 @@
+\subsection*{1.11}
+
+Show that the intersection of two sigma algebras is a sigma algebra.
+
+\bigskip
+\noindent \fbox{\begin{minipage}{\textwidth}
+For a set to be a sigma algebra, represented by $\beta$, it must meet the following requirements:
+
+1. $\emptyset \in \beta$
+
+2. $A \in \beta \implies A^c \in \beta$
+
+3. $\left\{ A_1, A_2, \ldots \right\} \in \beta \implies \cup_{i=1}^{\infty} A_i \in \beta$
+\end{minipage}}
+\bigskip
+
+% Satisfy 1.
+
+Let $X, Y$ both be sigma algebras of $S$.
+
+1.
+
+Because $X$ is a sigma algebra, it follows that $\emptyset \in X$.
+
+Because $Y$ is a sigma algebra, it follows that $\emptyset \in Y$.
+
+Therefore, $\emptyset \in X \cap Y$
+
+% Satisfy 2.
+
+2.
+
+Let $A \in X \cap Y$
+
+$A \in X$, so $A^c \in X$ 
+
+$A \in Y$, so $A^c \in Y$
+
+Therefore, $A^c \in X \cap Y$
+
+3. 
+
+Let $\left\{ A_1, A_2, \cdots \right\} \in X \cap Y$
+
+$\left\{ A_1, A_2, \cdots \right\} \in X$, so $\cup_{i=1}^{\infty} A_i \in X$
+
+$\left\{ A_1, A_2, \cdots \right\} \in Y$, so $\cup_{i=1}^{\infty} A_i \in Y$
+
+Therefore, $\left\{ A_1, A_2, \cdots \right\} \in X \cap Y$
+
+Conclusion: 
+
+$X \cap Y$ is a sigma algebra as it fulfills all of the necessary requirements.

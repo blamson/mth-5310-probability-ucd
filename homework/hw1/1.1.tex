@@ -1,0 +1,22 @@
+\subsection*{1.}
+
+What is the most rigorous mathematical definition for probability that you know or have learned?
+
+Any of the definitions for probability (that I remember) are some variation of Kolmogorov's Axioms. Here's one from \textbf{Mathematical Statistics: An Introduction to Likelihood based Inference} by Richard J Rossi (2018). 
+
+\noindent \fbox{\begin{minipage}{\textwidth}
+		\begin{definition}[Kolmogorov's Probability Function]
+			Let $\Omega$ be the sample space associated with a chance experiment, and let $\beta$ be a $\sigma-$algebra of events of $\Omega$. A set function $P$ on $\beta$ satisfying the following three properties is called a probability function or a probability measure.
+
+			1. $P(\Omega) = 1$
+			
+			2. $P(A) \geq 0$ for every event $A \in \beta$
+
+			3. If $\left\{ A_i : i \in N  \right\} \subset \beta$ is a collection of disjoint events, then:
+
+			\[P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)\]
+
+			The triple $(\Omega, \beta, P)$ is called a probability space.
+			
+		\end{definition}
+\end{minipage}}
