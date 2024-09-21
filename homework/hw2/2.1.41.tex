@@ -1,0 +1,98 @@
+\subsection*{1.41}
+
+As in Example 1.3.6, consider telegraph signals dot and dash sent in the proportion 3:4, where erratic transmissions cause a dot to become a dash with a probability $1/4$, and a dash to become a dot with probability $1/3$.
+
+\subsubsection*{A}
+
+If a dash is received, what is the probability that a dash has been sent?
+
+\noindent \textbf{Solution:}
+
+To start, let's examine our goal. We're looking for:
+
+\[P(\text{dash sent} | \text{dash received})\]
+
+We need to consider a few things, because there are actually a couple ways for us to receieve a dash because the signals can change. We're going to need to compile some building blocks for this problem.
+
+\textbf{Notation Note:} For the sake of simplicity, I will be referring to dots as $o$ and dashes as $a$. Sent and receieved will be referred to with $s$ and $r$ respectively. For example, $o_s$ indicates a dot that was sent.
+
+Let's first examine the proportion 3:4 for sent signals. Interpreting this means that for every 3 dots, we get 4 dashes. As a simple example, if we send 7 signals, $3/7$ will be dots and $4/7$ will be dashes. Those are actually the probabilities for the sent signals even!
+
+\begin{align*}
+	P(o_s) &= \frac{3}{3+4} = \frac{3}{7} \\
+	P(a_s) &= \frac{4}{3+4} = \frac{4}{7} \\
+	P(a \rightarrow o) &= \frac{1}{3} \\
+	P(o \rightarrow a) &= \frac{1}{4}
+\end{align*}
+
+We still need one more tool to tackle this problem, we need $P(a_r)$. This one requires a bit more effort to sort out. We need the probability that a dash was sent AND NOT changed. We also need the probability a dot was sent AND changed. We then add those together to get our probability.
+
+\begin{align*}
+	P(a_r) &= P(a_s \; \text{and not}\; a \rightarrow o) + P(o_s \; \text{and}\; o \rightarrow a) \\
+	&= \left( \frac{4}{7} \cdot \frac{2}{3} \right) + \left( \frac{3}{7} \cdot \frac{1}{4} \right) \\
+	&\approx 0.488
+\end{align*}
+
+For a sanity check, I will also do the same computation for a dot received. These two should add up to 1 as they are the only possible outcomes.
+
+\begin{align*}
+	P(o_r) &= P(o_s \; \text{and not}\; o \rightarrow a) + P(a_s \; \text{and}\; a \rightarrow o) \\
+	&= \left( \frac{3}{7} \cdot \frac{3}{4} \right) + \left( \frac{4}{7} \cdot \frac{1}{3} \right) \\
+	&\approx 0.511
+\end{align*}
+
+$0.488 + 0.511 \approx 1$ so we're good! Now we just plug our tools into Baye's Rule.
+
+\begin{align*}
+	P(a_s | a_r) &= \frac{P(a_s \cap a_r)}{a_r} \\
+	&= \frac{(4/7) \cdot 0.488}{0.488} \\
+	&\approx 0.57
+\end{align*}
+
+\subsubsection*{B}
+
+Assuming independence between signals, if the message dot-dot was receieved, what is the probability distribution of the four possible messages that could have been sent?
+
+\noindent \textbf{Solution}
+
+There are 4 ways to get dot-dot. 
+
+\begin{enumerate}
+	\item Getting two natural dots. 
+	\item Getting one natural dot and one changed dash
+	\item Getting one changed dash and one natural dot
+	\item Getting two changed dashes.
+\end{enumerate}
+
+To tackle this problem we need a random variable to make use of these events. 
+
+Let's let $X = \#$ of natural $o$'s.
+
+We can handle this using the classic table for breaking down all the steps.
+
+\begin{table}[hbt!]
+\begin{tabular}{lll|l}
+\hline
+\multicolumn{1}{|l|}{$x$} & \multicolumn{1}{l|}{$P(X=x)$} & $P(X=x)$ & \multicolumn{1}{l|}{$P(X=x \; | \; \text{two dots received})$} \\ \hline
+\multicolumn{1}{|l|}{0} & \multicolumn{1}{l|}{$\left( (4/7) \cdot (1/3) \right)^2$} &    $0.036$     & \multicolumn{1}{l|}{$0.036/0.261 = .138$} \\ \hline
+\multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{$2 \cdot \left( \left( (3/7) \cdot (3/4) \right) \cdot \left( (4/7) \cdot (1/3) \right) \right)$} &  $0.122$       & \multicolumn{1}{l|}{$0.122 / 0.261 = 0.467$} \\ \hline
+\multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{$\left( (3/7) \cdot (3/4) \right)^2$} &    $0.103$     & \multicolumn{1}{l|}{$0.103 / 0.261 = 0.395$} \\ \hline
+                        &                       & $0.261$ & $1$                  
+\end{tabular}
+\end{table}
+
+\[
+	f_X(x) = \begin{cases}
+		0.138 & x=0 \\
+		0.467 & x=1 \\
+		0.395 & x=2
+	\end{cases}
+\]
+
+\[
+	F_X(x) = \begin{cases}
+		0.138 & x=0 \\
+		0.605 & x=1 \\
+		0.1 & x=2
+	\end{cases}
+\]
