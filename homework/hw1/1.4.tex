@@ -1,0 +1,29 @@
+\subsection*{4}
+
+\subsubsection*{i)}
+
+Use Bonferroni's Inequality (Example 1.2.10) to show the Bonferroni Correction method will result in a FWER of at most a $5\%$ in the two hypothesis test scenario described above.
+
+Let's start with the default $\alpha = 0.05$ and compute our FWER before we do the correction.
+
+Let A, B be events where we correctly conclude the null for tests 1 and 2 respectively.
+
+\[
+	P(A \cap B) \geq P(A) + P(B) - 1 = .95 + .95 - 1 = 0.9
+\]
+
+What we can conclude from the default $\alpha$ value here is that the probability we do not correctly conclude the null on at least one test is at least $1 - 0.9 = 0.1$. 
+
+Let's take a look with a bonferroni corrected $\alpha = 0.05/2 = 0.025$. 
+
+\[
+	P(A \cap B) \geq P(A) + P(B) - 1 = .975 + .975 - 1 = 0.95
+\]
+
+Looking at our new value here, our FWER is now at most $1 - 0.95 = 0.05$ as expected.
+
+\subsubsection*{ii)}
+
+The usual Bonferroni Correction assumes that the hypothesis tests are independent of each other. Why is this important to your calculation in (i).
+
+The issue is that if we throw dependence into the mix that the computation for $P(A \cap B)$ is now fundamentally different. If if turns out that test 2's results depend on the results of test 1, then the probability of a false positive is going to differ depending on if test 1 correctly concluded the null or not. This becomes a conditional probability problem and we can't assume that Bonferroni Inequality will hold.

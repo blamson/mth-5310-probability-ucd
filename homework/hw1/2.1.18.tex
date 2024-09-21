@@ -1,0 +1,19 @@
+\subsection*{1.18}
+
+If $n$ balls are placed at random into $n$ cells, find the probability that exactly one cell remains empty.
+
+\noindent Answer provided by the book: ${n \choose 2} n! / n^{n}$
+
+Let's work backwards from the answer and explain each component:
+
+\noindent Denominator: $n^n$. 
+
+This bit I think depends on how you interpret the question. My hunch here is that $n!$ makes more sense as I assumed a ball would go away every time one was assigned a cell. However, if we assume we're sampling with replacement for the denominator specifically then we do end up with $n^n$.
+
+\noindent Numerator: ${ n \choose 2}$
+
+This part of the numerator here is interesting. The purpose of it is that for one cell to be empty, one cell must contain 2 balls. If we have $n$ balls and must choose 2 to go into a cell, we have ${ n \choose 2}$ ways to do that.
+
+\noindent Numerator: $n!$
+
+This chunk is actually two parts simplified together. So, first off, we need to select a cell to be empty. We have ${n \choose 1} = n$ ways of doing that. Then, for the rest of the cells, we have $n-1, n-2, \cdots, 1$ ways of assigning the remaining balls. So we get $n \cdot (n-1)! = n!$.

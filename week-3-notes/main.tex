@@ -1,0 +1,46 @@
+%        File: main.tex
+%     Created: Tue Sep 10 12:00 PM 2024 M
+% Last Change: Tue Sep 10 12:00 PM 2024 M
+%
+\documentclass[a4paper]{article}
+\input{preamble.tex}
+\begin{document}
+\begin{definition}[1.3.7: Independence]
+	Two events $A \& B$ are statistically independent IF AND ONLY IF $P(A \cap B) = P(A)P(B)$
+\end{definition}
+
+\begin{definition}[1.3.12]
+	A collection of events $A_1, \cdots, A_k$ are mutually independent if for any subcollection $A_{i1}, \cdots, A_{ik}$
+	\[P\left( \bigcap_{j=1}^{k} A_{ij} \right) = \prod_{i=1}^{k} P(A_{ii})\]
+\end{definition}
+
+\begin{definition}[1.4.1: Random Variables]
+	A random variable is a function from a sample space, $S$, into the real numbers. In other words, a random variable is your map. 
+\end{definition}
+
+Takeaways:
+
+- Outcomes or events must be quantifiable. 
+
+- A RV is a map. 
+
+\subsection{Example:}
+
+$S = \left\{ S_1, \cdots, S_n \right\}$ w/ associated $\sigma-$algebra. 
+
+Let $X$ be a RV with range $X = \left\{ x_1, \cdots, x_m \right\}$
+
+Since we have a sample space and a valid sigma algebra, this allows us to define a valid probability function, called $P$.
+
+Then the probability on $X$ (or $P_X$) can be defined as we observe $X=x_i$ iff the outcome of the random experiment is an:
+
+\begin{align}
+	s_i \in S \; s.t. \; X(s_i) \\
+	P_X(X=x_i) = P(\left\{ s_i \in S : X(s_i) = x_i \right\})
+\end{align}
+
+Notes got super hard to read here. Board writing is WILD.
+
+\end{document}
+
+

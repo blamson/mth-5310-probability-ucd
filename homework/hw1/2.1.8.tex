@@ -1,0 +1,97 @@
+\subsection*{1.8}
+
+% Part A ----
+
+\subsubsection*{A}
+
+Derive the general formula for the probability of scoring $i$ points.
+
+\[
+	P(\text{Score i points}) = \frac{\text{Area of ring}}{\text{Area of full circle}}
+\]
+
+The denominator here is easy, it's just $\pi r^2$. For the numerator we can think of the ring as a circle with the center carved out. And that center is also a circle, just a smaller one inside of the larger one. So we just take the area of the larger circle and subtract the area of the smaller circle. The points, $i$, help us determine the radius of these circles. Let's look at some examples for $i=1,3,5$ so we can notice some patterns and generalize.
+
+Note that $P(i=1)$ is just shorthand for $P(\text{Score}\; i\; \text{points})$. 
+
+\begin{align*}
+	P(i=1) &= \frac{\pi r^2 - \pi(\frac{4}{5} r)^2}{\pi r^2} \\
+	P(i=3) &= \frac{\pi(\frac{3}{5} r)^2 - \pi(\frac{2}{5} r)^2}{\pi r^2} \\
+	P(i=5) &= \frac{\pi(\frac{1}{5} r)^2 - \pi(\frac{0}{5} r)^2}{\pi r^2}
+\end{align*}
+
+Alright, from here we can begin the derivation. What we see is the radius of both circles are scaled down as the points increase. $i=1$ uses the entire outside circle, but the $4/5$ comes in because that inner circle is one region deeper in. In other words, we go from $(5/5)^2$ scaling r to $((5-i)/5)^2$ scaling r for the inner circle. That $5-i$ allows us to creep further into the circle and we want to use that for both circles. For the outside ring, since it's one region out, I use $5 - i + 1$ as that's how I think of it intuitvely, but will simplify that to $6-i$ instead.
+
+Derivation on the following page.
+
+\begin{align*}
+	P(\text{Score}\; i\; \text{points}) &= \frac{\pi \left( \frac{5 - i + 1}{5} r \right)^2 - \pi \left( \frac{5 - i}{5} r \right)^2 }{\pi r^2} \\
+	&= \frac{\pi \left( \frac{6 - i}{5} r \right)^2 - \pi \left( \frac{5 - i}{5} r \right)^2 }{\pi r^2} \\
+	&= \frac{\pi \left( \left( \frac{6 - i}{5}\right)^2 r^2 - \left(\frac{5 - i}{5}\right)^2 r^2 \right) }{\pi r^2} \\
+	&= \frac{r^2 \left( \left( \frac{6 - i}{5}\right)^2 - \left(\frac{5 - i}{5}\right)^2 \right) }{r^2} \\
+	&= \left( \frac{6 - i}{5}\right)^2 - \left(\frac{5 - i}{5}\right)^2 \\
+	&= \frac{(6-i)^2 - (5-i)^2}{5^5}
+\end{align*}
+
+% Part B ---
+
+\subsubsection*{B} 
+
+Show that the function for scoring $i$ points is a decreasing function of $i$.
+
+I'll just utilize a plot here.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(i\),
+    ylabel = {\(f(i)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=1:6,
+    range=0:0.5,
+    samples=100, 
+    color=red,
+]
+{((6-x)^2 - (5-x)^2) / 5^2};
+\addlegendentry{$\frac{(6-i)^2 - (5-i)^2}{5^5}$}
+
+\end{axis}
+\end{tikzpicture}
+
+Of note that this plot isn't really perfect for this problem, as this plot is continuous and this problem is discrete. But I'm just looking at the function itself without accounting for $i$ only being integer values because I do not want to learn how to do that in \LaTeX .
+
+\pagebreak
+
+% Part C ---
+
+\subsection*{C}
+
+Show that this function is a probability function according to the Kolmogorov Axions.
+
+\noindent 1. $P(A) \geq 0 \forall A \in \beta$
+
+We can check the plot for this one. All possible values are greater than zero. That line extends beyond 5, but that leaves our domain and so it does not count. For $i = 1, 2, 3, 4, 5$ this checks out.
+
+\noindent 2. $P(S) = 1$
+
+We can check this with some manual computation.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline
+$i$ & $P(i)$ \\ \hline
+1   & 0.36   \\ \hline
+2   & 0.28   \\ \hline
+3   & 0.20   \\ \hline
+4   & 0.12   \\ \hline
+5   & 0.04   \\ \hline
+\end{tabular}
+\end{table}
+
+This sums to 1. We're good!
+
+\noindent 3. If $A_1, A_2, \cdots \in \beta$ are pairwise disjoint, then $P(\cup_{i=1}^{\infty}) = P(\sum_{i=1}^{\infty} P(A_i))$.
+
+I'll primarily use language for this one. We know these are pairwise disjoint as you can't, for example, score 1 and 2 points at the same point. They are all mutually exclusive from one another. Due to this we can just return to the table from the second axiom. The probability of all the unions is the exact same as summing up all the individual probabilities. 

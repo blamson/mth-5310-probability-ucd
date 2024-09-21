@@ -1,0 +1,94 @@
+\subsection*{1.31}
+
+\subsubsection*{A}
+
+Prove that, in general, sampling with replacement from the set $\left\{ x_1, x_2, \cdots, x_n \right\}$, the outcome with average $\left( x_1 + x_2 + \cdots + x_n \right) / n$ is the most likely, having probability $\frac{n!}{n^n}$.
+
+Before we start with a proof, some intuition. My brain jumps to dice here, so let's say we roll a 4-sided dice twice and take the average out the results. We're sampling with replacement here because we can roll the same value multiple times.
+
+Here's a table of the possible outcomes.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+    & x=1 & x=2 & x=3 & x=4 \\ \hline
+y=1 & 1   & 1.5 & 2   & 2.5 \\ \hline
+y=2 & 1.5 & 2   & 2.5 & 3   \\ \hline
+y=3 & 2   & 2.5 & 3   & 3.5 \\ \hline
+y=4 & 2.5 & 3   & 3.5 & 4   \\ \hline
+\end{tabular}
+\end{table}
+
+Note how 2.5 has the most cells in the table? 
+
+2.5 is also the expected value of a d4 dice.
+
+\begin{align*}
+	E[X] &= \sum_{i=1}^{4} \frac{1}{4} x_i \\
+	&= \frac{1}{4} \cdot (1 + 2 + 3 + 4) \\
+	&= 2.5
+\end{align*}
+
+Really all this problem is asking is if this trend generalizes to an $n$-sided dice being rolled $n$ times and averaged.
+
+To be honest, I'm late on this assignment and unsure how I would tackle this proof. But, with this d4 example we would see what's called a trianglular distribution, where the average is the most common value. I'm sure this would continue on as you scale up the experiment.
+
+\subsubsection*{B}
+
+Use Stirling's Formula to show that $n!/n^n \approx \sqrt{2n\pi}/e^n$
+
+\noindent Stirling's Formula: $n! \approx \sqrt{2\pi}n^{n + 1/2} e^{-n}$
+
+So we just divide by $n^n$ and simplify.
+
+\begin{align*}
+	\frac{n!}{n^n} &\approx \frac{ \sqrt{2\pi}n^{n + 1/2} e^{-n}}{n^n} \\
+	&\approx \sqrt{2\pi} \cdot n^{1/2} \cdot \frac{1}{e^n} \\
+	&\approx \frac{\sqrt{2\pi n}}{e^n}
+\end{align*}
+
+\subsubsection*{C}
+
+Show that the probability that a particular $x_i$ is missing from an outcome is:
+
+\[\left(1- \frac{1}{2}\right)^n \rightarrow e^{-1} \; \text{as} \; n \rightarrow \infty\]
+
+Let's first understand the leftmost side here. Let's assume every $x_i$ is equally likely because I think we have to assume that here. 
+
+Then the probability that you don't see a specific outcome is simply $1 - \frac{1}{n}$. Since we're checking every single $x_i$ and we have $n$ of them, we get $\left( 1 - \frac{1}{2} \right)^n$.
+
+As for the convergence, quick sanity check. $e^{-1} \approx 0.36787$
+
+$(1 - \frac{1}{1000}) \approx 0.36769$. 
+
+Okay, I'm convinced it does then.
+
+I'm going to be honest, I do not remember how to evaluate limits like these. So I'm just going to plot this!
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(n\),
+    ylabel = {\(f(n)\)},
+]
+
+\addplot [
+    domain=1:100,
+    range=0:0.5,
+    samples=100, 
+    color=red,
+]
+{(1 - (1/x))^x};
+\addlegendentry{$\left( 1 - \frac{1}{n} \right)^n$}
+
+\addplot [
+    domain=1:100,
+    range=0:0.5,
+    samples=100, 
+    color=blue,
+]
+{e^(-1)};
+\addlegendentry{$e^{-1}$}
+
+\end{axis}
+\end{tikzpicture}
