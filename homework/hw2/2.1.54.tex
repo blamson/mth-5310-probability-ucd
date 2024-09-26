@@ -1,0 +1,33 @@
+\subsection*{1.54}
+
+Determine the value of $c$ that makes $f(x)$ a pdf.
+
+\[
+	f(x) = ce^{-|x|}, \; -\infty < x < \infty
+\]
+
+We need to ensure that our functions output is always greater than 0 and that the integration of all possible values results in 1. 
+
+For starters, $\lim_{x \to \infty} e^{-|x|} = 0$, this applies to $-\infty$ as well. So we need $c$ that is scaling this value to be non-negative and not 0. So $c > 0$.
+
+The real meat of the problem will have us integrating $f(x)$, setting it equal to 1 and solving for $c$.
+
+Important to note here that we need two different integrals here because:
+
+$|x| = x; \; x \geq 0$
+
+$|x| = -x; \; x < 0$
+
+Let's get started.
+
+\begin{align*}
+	\int_{-\infty}^{\infty} f(x) dx &= 1 \\
+	&= \int_{-\infty}^{\infty} ce^{-|x|} dx \\
+	&= c \int_{-\infty}^{\infty} e^{-|x|} dx \\
+	&= c \left( \int_{-\infty}^{0} e^{-(-x)} dx + \int_{0}^{\infty} e^{-x} dx  \right) \\
+	&= c \left( e^x \rvert_{-\infty}^0 + - e^{-x} \rvert_{0}^{\infty} \right) \\
+	&= c(1 - 0 - (0 - 1)) \\
+	&= c(1+1) \\
+	1 &= 2c \\
+	c &= \frac{1}{2}
+\end{align*}

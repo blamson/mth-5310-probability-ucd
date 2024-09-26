@@ -1,0 +1,40 @@
+\subsection*{3}
+
+A box contains two coins: (1) a regular fair coin that has P(Head)=P(Tail)=0.5 and (2) a fake two-headed coin where both sides are heads. That is, P(Head) = 1.
+
+A single coin is chosen at random and then flipped twice. Describe the following events:
+
+\begin{enumerate}
+	\item A = First coin toss results in a Head
+	\item B = Second coin toss results in a Head
+	\item C = The regular coin was the chosen coin.
+\end{enumerate}
+
+\subsubsection*{A}
+
+Explain in practical language, why A and B are not independent, but are conditionally independent given C.
+
+A and B are not independent because the probability for B relies on the outcome of A. As an example, if you land a Tails on the first toss you automatically know you're using the fair coin. Thus, P(B) becomes a simple 0.5. If the first toss is a Heads the computation is more involved. The fact this changes at all depending on the first toss is why they aren't independent.
+
+Now, if you know which coin you're using the tosses become independent, even with the unfair coin. A and B are conditionally independent on C because the outcome of the first toss gives you information on what coin you're using.
+
+\subsubsection*{B}
+
+Calculate $P(A|C), P(B|C), P(A \cap B | C), P(A), P(B), and P(A \cap B)$. Hint, calculate the probabilities in the order provided.
+
+\begin{align*}
+	P(A|C) &= 0.5 \\
+	P(B|C) &= 0.5 \\
+	P(A \cap B | C) &= 0.5^2= 0.25 \\
+	P(A) &= P(A | C) \cdot P(C) + P(A | C^c) \cdot P(C^c) \\
+	&= 0.5 \cdot 0.5 + 1 \cdot 0.5 \\
+	&= 0.75 \\
+	P(B) &= P(B | C) \cdot P(C) + P(B | C^c) \cdot P(C^c) \\
+	&= 0.75 \\
+	P(A \cap B) &= P(A \cap B | C) \cdot P(C) + P(A \cap B | C^c) \cdot P(C^c) \\
+	&= 0.25 \cdot 0.5 + 1 \cdot 0.5 \\
+	&= 0.625
+\end{align*}
+
+
+

@@ -1,0 +1,37 @@
+\subsection*{1.52}
+
+Let $X$ be a continuous random variable with pdf $f(x)$ and cdf $F(x)$. For a fixed number $x_0$, define the function:
+
+\[
+	g(x) = \begin{cases}
+		\frac{f(x)}{1 - F(x_0)} & x \geq x_0 \\
+		0 & x < x_0
+	\end{cases}
+\]
+
+Prove that $g(x)$ is a pdf. Assume $F(x_0) < 1$.
+
+\begin{theorem}[1.6.5]
+	A function $f_x(x)$ is a pdf (or pmf) of a random variable $X$ IFF
+	\begin{itemize}
+		\item $f_X(x) \geq 0 \; \forall \; x$
+		\item $\sum_x f_X(x) = 1 \; \text{or} \; \int_{-\infty}^{\infty} f_X(x)dx = 1$ 
+	\end{itemize}
+\end{theorem}
+
+To verify the first criteria we need only examine the numerator and denominator of our function. Because $f(x)$ is a pdf, $f(x) \geq 0$ always. In the denominator, we are told to assume $F(x_0) < 1$, which means our denominator is never 0 or negative. As such, $g(x) \geq 0 \; \forall \; x$. 
+
+For the second criteria we must integrate over all of $g(x)$ and verify that it is 1. What's key here is recognizing that our function is piecewise, there's a case when $x < x_0$ and another case when $x \geq x_0$. So we'll be splitting our main integral into two and evaluating from there.
+
+\begin{align*}
+	\int_{-\infty}^{\infty} g(x) dx &= \int_{-\infty}^{x_0} g(x) dx + \int_{x_0}^{\infty} g(x) dx & \text{Split} \; g(x) \\
+	&= \int_{-\infty}^{x_0} \frac{f(x)}{1 - F(x_0)} dx +  \int_{x_0}^{\infty} \frac{f(x)}{1 - F(x_0)} dx & \text{Substitute} \\
+	&= \frac{1}{1 - F(x_0)} \int_{-\infty}^{x_0} f(x) dx + \frac{1}{1 - F(x_0)} \int_{x_0}^{\infty} f(x) dx & \text{Remove constant} \\
+	&= \frac{1}{1 - F(x_0)} \left( \int_{-\infty}^{x_0} f(x) dx + \int_{x_0}^{\infty} f(x) dx \right) \\
+	&= \frac{1}{1 - F(x_0)} \left( F(x) \rvert_{-\infty}^{x_0} +  F(x) \rvert_{x_0}^{\infty}\right) \\
+	&= \frac{1}{1 - F(x_0)} \left( 0 + 1 - F(x_0) \right) \\
+	&= \frac{1 - F(x_0)}{1 - F(x_0)} \\
+	&= 1
+\end{align*}
+
+$g(x)$ meets both critera, therefore it is a pdf. 

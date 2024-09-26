@@ -1,0 +1,62 @@
+\subsection*{2}
+
+An urn contains 5 red balls and 2 green balls. A single ball is randomly drawn from the urn. If the ball is green, then a red ball is added to the urn. If the ball is red, then a green ball is added to the urn. The original ball is not returned to the urn no matter if it is green or red. Now, a second ball is randomly drawn from the urn.
+
+\subsubsection*{A}
+
+In probability notation, write the P(second ball is red) as a function of the possible outcomes of the first draw. \\
+
+\noindent \textbf{Solution:}
+
+Let's set some groundwork here. First, let's create a basic pdf for our first draw.
+
+\noindent \textbf{Notation:} Let $x=1$ if a red ball is pulled, $x=0$ otherwise.
+
+\[
+	f_X(x) = \begin{cases} 
+		\frac{3}{8} & x=0 \\
+		\frac{5}{8} & x=1
+	\end{cases}
+\]
+
+This is of course just a Bernoulli random variable. Let's now look at how the urn changes for our second pull depending on what we pull. If $x=0$, our urn now has 6 red and 2 green. If $x=1$, we now have 4 red and 4 green. 
+
+\noindent \textbf{Notation:} Let $A$ be the event that our second ball is red. 
+
+To tackle this problem we can use teorem 1.2.11 which states that if P is a probability function, then $P(A) = \sum_{i=1}^{\infty} P(A \cap C_i)$ for any partition $C_1, C_2, \cdots$. We can clearly see that the first pull creates a parition of our sample space. 
+
+So we can now write out our goal and work towards it.
+
+\[P(A) = P(A \cap x=1) + P(A \cap x=0)\]
+
+We don't know $P(A \cap x=1)$ directly, but we do know its building blocks. 
+
+	\begin{align*}
+		P(A|X=x) &= \frac{P(A \cap X=x)}{P(X=x)} \\
+		P(A \cap X=x) &= P(A | X=x) \cdot P(X=x)
+	\end{align*}
+
+So now we can write this out as:
+
+\[P(A) = P(A | x=1) \cdot P(x=1) + P(A | x=0) \cdot P(x=0)\]
+
+\subsubsection*{B}
+
+Calculate the probability that the second ball is red.
+
+For our final building blocks, let's provide the conditional probabilities. These are easily pulled from the updated proportions on our second pull.
+
+\begin{align*}
+	P(A | X=0) &= \frac{6}{8} \\
+	P(A | X=1) &= \frac{4}{8}
+\end{align*}
+
+Now we just plug it all in.
+
+\begin{align*}
+	P(A) &= P(A | x=1) \cdot P(x=1) + P(A | x=0) \cdot P(x=0) \\
+	&= \frac{4}{8} \cdot \frac{5}{8} + \frac{6}{8} \cdot \frac{3}{8} \\
+	&\approx 0.59375
+\end{align*}
+
+As a quick sanity check, doing this same process for the second pull being green nets a probabiity of $\approx 0.40625$ which does sum to 1 with our only other possible event. So we're done.

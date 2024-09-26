@@ -1,0 +1,77 @@
+\subsection*{1.47}
+
+Prove that the following functions are cdfs.
+
+\begin{theorem}[1.5.3]
+	The function $F_X(x)$ is a cdf IFF the following three conditions hold:
+	\begin{itemize}
+		\item $\lim_{x \to -\infty}F(x) = 0$ and $\lim_{x \to \infty}F(x) = 1$
+		\item $F(x)$ is a nondecreasing function of $x$
+		\item $F(x)$ is right continuous. That is, for every number $x_0$, $\lim_{x \downarrow x_0}F(x) = F(x_0)$
+	\end{itemize}
+\end{theorem}
+
+\subsubsection*{A}
+
+\[
+	\frac{1}{2} + \frac{1}{\pi} \tan^{-1}(x), x \in (-\infty, \infty)
+\]
+
+For the first property let us examine the known range, and limits, of the inverse tangent function. $F(x)$ here is simply shifting and scaling that function, so we can take advantage of that. Inverse tangent reaches the respective parts of its range as it approaches the corresponding infinity, so it works just fine here.
+
+Range of $\tan^{-1}(x) = (-\frac{\pi}{2}, \frac{\pi}{2})$
+
+$\lim_{x \to -\infty}\tan^{-1}(x) = -\frac{\pi}{2}$ and $\lim_{x \to \infty} \tan^{-1}(x) = \frac{\pi}{2}$
+
+All we do now is modify these values.
+
+\begin{align*}
+\text{Range of}\; F(x) &= \left(\frac{1}{2} - \frac{\pi}{2\pi}, \frac{1}{2} + \frac{\pi}{2\pi}\right) \\
+	&= (0, 1)
+\end{align*}
+
+From this we can say that $\lim_{x \to -\infty}F(x) = 0$ and $\lim_{x \to \infty}F(x) = 1$ so we pass the first criteria. 
+
+For the second criteria we take the derivative and verify that it is always positive.
+
+\begin{align*}
+	F(x) &= \frac{1}{2} + \frac{1}{\pi} \tan^{-1}(x) \\
+	\frac{\partial}{\partial x} F(x) &= \frac{\partial}{\partial x} \frac{1}{2} + \frac{1}{\pi} \tan^{-1}(x) \\
+	f(x) &= \frac{1}{\pi} \cdot \frac{1}{1 + x^2}
+\end{align*}
+
+It is clear that $f(x) \geq 0 \;\forall\; x$, so $F(x)$ is nondecreasing.
+
+As for our third criteria, our function is continuous everywhere and as such is right continuous.
+
+As $F(x)$ meets all 3 criteria, it is a cdf.
+
+\subsubsection*{D}
+
+\[
+	1 - e^{-x}, x \in (0, \infty)
+\]
+
+First criteria
+
+\begin{align*}
+	\lim_{x \to 0} F(x) &= \lim_{x \to \infty} 1 - e^{-x} \\
+	&= 1 - e^0 \\
+	&= 0 \\
+	\lim_{x \to \infty} F(x) &= \lim_{x \to \infty} 1 - e^{-x} \\
+	&= 1 - 0 \\
+	&= 1
+\end{align*}
+
+First criteria met.
+
+Second criteria.
+
+\begin{align*}
+	\frac{\partial}{\partial x} F(x) &= \frac{\partial}{\partial x} 1 - e^{-x} \\
+	&= -(-e^{-x}) \\
+	f(x) &= e^{-x} \\
+	f_x(x) \geq 0 \; \forall \; x \in R
+\end{align*}
+
+$F(x)$ is continuous everywhere and as such is right continuous.

@@ -1,0 +1,64 @@
+\subsection*{1.53}
+
+A certain river floods every year. Suppose that the low-water mark is set at 1 and the high-water mark $Y$ has distribution function:
+
+\[
+	F_Y(y) = P(Y \leq y) = 1 - \frac{1}{y^2}, \; 1 \leq y < \infty
+\]
+
+\subsubsection*{A}
+
+Verify that $F_Y(y)$ is a cdf.
+
+Non-decreasing criteria: $1/y^2$ is always decrasing as $y$ increases and is always greater than 0 due to the even exponent. From this, $1 - \frac{1}{y^2}$ is always increasing as $y$ increases. 
+
+Limit criteria:
+
+\begin{align*}
+	\lim_{x\to1} 1 - \frac{1}{y^2} &= 1 - 1 = 0 \\
+	\lim_{x\to \infty} 1 - \frac{1}{y^2} &= 1 - 0 = 1 \\
+\end{align*}
+
+Right-continuous criteria:
+
+\[\lim_{y \downarrow y_0} F(y) = \lim_{y \downarrow y_0} 1 - \frac{1}{y^2} = 1 - \frac{1}{y_0^2}\]
+
+\subsubsection*{B}
+
+Find $f_Y(y)$. 
+
+\begin{align*}
+	f_Y(y) &= \frac{\partial}{\partial y} F_Y(y) dy \\
+	&= \frac{\partial}{\partial y} 1 - \frac{1}{y^2} dy \\
+	&= - (-2y^{-3}) \\
+	f_Y(y) &= \frac{2}{y^3}
+\end{align*}
+
+\subsubsection*{C}
+
+If he low-water mark is reset at zero and we use a unit of measurement which is $\frac{1}{10}$ of that given previously, the high water mark becomes $Z=10(Y - 1)$. Find $F_Z(z)$.
+
+First let's substitute $F_Y(y)$ into $F_Z(z)$. 
+
+\begin{align*}
+	F_Z(z) &= 10(Y-1) \\
+	&= 10\left( 1 - \frac{1}{y^2} - 1 \right) \\
+	&= \frac{10}{y^2}
+\end{align*}
+
+Now we solve for $y$
+
+\begin{align*}
+	z &= 10(y - 1) \\
+	10z+1 &= y
+\end{align*}
+
+So now we have:
+
+\begin{align*}
+	F_Z(z) &= \frac{110}{y^2} \\
+	&= \frac{10}{(10z + 1)^2} \\
+	&= \frac{10}{100z^2 + 20z + 1}
+\end{align*}
+
+
