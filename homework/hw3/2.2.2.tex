@@ -1,0 +1,125 @@
+\subsection*{2.2}
+
+\textbf{In each of the following find the PDF of Y}
+
+\noindent \textbf{Key Theorems}
+
+\begin{theorem}[2.1.5]
+	\[f_Y(y) = \begin{cases}
+		f_X(g^{-1}(y)) \cdot \left| \frac{d}{dy} g^{-1}(y) \right| & y \in \mathcal{Y} \\
+		0 & o/w
+	\end{cases}\]
+\end{theorem}
+
+\subsubsection*{Part A}
+
+\textbf{NOTE:} I know Part A wasn't assigned but I did it on accident and want to save my work for future studying.
+
+$Y = X^2$
+
+$f_X(x) = 1; \; 0 < x < 1$
+
+To apply theorem 2.1.5 we need a few components. The range of $Y$, the map from y to x, $g^{-1}(y)$, and the derivative of that map. 
+
+Due to the domain of $x$ we and how $x^2$ transforms it: $\mathcal{Y} = (0,1)$.
+
+\noindent Next, find $g^{-1}(y)$:
+
+\begin{align*}
+	x^2 &= y \\
+	x &= \sqrt{y} \\
+	g^{-1}(y) &= \sqrt{y}
+\end{align*}
+
+\noindent Derivative of $g^{-1}(y)$:
+
+\begin{align*}
+	\frac{d}{dy} g^{-1}(y) &= \frac{d}{dy} \sqrt{y} \\
+	&= \frac{1}{2\sqrt{y}}
+\end{align*}
+
+\noindent Put it all together:
+
+\begin{align*}
+	f_X(g^{-1}(y)) \cdot \left|\frac{d}{dy} g^{-1}(y) \right| &= 1 \cdot \left| \frac{1}{2\sqrt{y}} \right| \\
+	&= \frac{1}{2\sqrt{y}}
+\end{align*}
+
+\[
+	f_Y(y) = \begin{cases}
+		\frac{1}{2\sqrt{y}} & 0 < y < 1 \\
+		0 & o/w
+	\end{cases}
+\]
+
+
+\subsubsection*{Part B}
+
+\begin{align*}
+	Y &= -log(X) \\
+	f_X(x) &= \frac{(n+m+1)!}{n!m!}x^n(1-x)^m \\
+	0<x<1 ;& \; m,n \; \text{are positive integers}
+\end{align*}
+
+\noindent Solve for $g^{-1}(y)$
+
+\begin{align*}
+	y &= -log(x) \\
+	-y &= log(x) \\
+	e^{-y} &= x \\
+	e^{-y} &= g^{-1}(y)
+\end{align*}
+
+\noindent Take derivative of $g^{-1}(y)$
+
+\begin{align*}
+	\frac{d}{dy} g^{-1}(y) &= \frac{d}{dy} e^{-y} \\
+	&= -e^{-y}
+\end{align*}
+
+\noindent Put it all together
+
+\[
+	f_Y(y) = \begin{cases}
+		\frac{(n+m+1)!}{n!m!} e^{-yn} \cdot (1 - e^{-y}) & 0 < y < 1 \\
+		0 & o/w
+	\end{cases}
+\]
+
+\pagebreak
+
+\subsubsection*{Part C}
+
+$Y = e^X$
+
+\noindent $f_X(x) = \frac{1}{\sigma^2} x e^{-(x/\sigma)/2}$, $0 < x < \infty$, $\sigma^2$ is a positive constant.
+
+\noindent Solve for $g^{-1}(y)$
+
+\begin{align*}
+	y &= e^x \\
+	ln(y) &= x \\
+	g^{-1}(y) &= ln(y)
+\end{align*}
+
+\noindent Derivative of $g^{-1}(y)$
+
+\begin{align*}
+	\frac{d}{dy} g^{-1}(y) &= \frac{d}{dy} ln(y) \\
+	&= \frac{1}{y}
+\end{align*}
+
+Range of Y: $\mathcal{Y} = (0, \infty)$
+
+Put it all together
+
+\[
+	f_X(g^{-1}(y)) \cdot \left| \frac{d}{dy} g^{-1}(y) \right| = \frac{1}{\sigma^2} ln(y) e^{-(ln(y)/\sigma)/2} \cdot \left| \frac{1}{y} \right|
+\]
+
+\[
+	f_Y(y) = \begin{cases}
+		\frac{1}{\sigma^2} ln(y) e^{-(ln(y)/\sigma)/2} \cdot \frac{1}{y} & 0 < y < \infty \\
+		0 & o/w
+	\end{cases}
+\]
