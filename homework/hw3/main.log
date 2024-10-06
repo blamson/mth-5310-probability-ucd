@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  2 OCT 2024 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  5 OCT 2024 21:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,17 +680,23 @@ your preamble.
 [1{/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/pdftex/updm
 ap/pdftex.map}
 
-] (./2.2.2.tex [2] [3]) (./2.2.3.tex [4] [5]) [6] (./main.aux)
+] (./2.2.2.tex [2] [3]) (./2.2.3.tex [4] [5]) [6] (./2.2.6.tex
+[7] [8]
+Overfull \hbox (54.45709pt too wide) detected at line 104
+[]
+ []
+
+[9]) [10] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22736 strings out of 474116
- 605649 string characters out of 5733619
- 1938187 words of memory out of 5000000
- 44754 multiletter control sequences out of 15000+600000
+ 22742 strings out of 474116
+ 605726 string characters out of 5733619
+ 1945187 words of memory out of 5000000
+ 44757 multiletter control sequences out of 15000+600000
  560387 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,12n,112p,723b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -709,10 +715,10 @@ mr7.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/2024
 0312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (6 pages, 140254 bytes).
+Output written on main.pdf (10 pages, 154334 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
