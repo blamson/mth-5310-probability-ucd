@@ -1,0 +1,17 @@
+\subsection*{1}
+
+\subsubsection*{A}
+
+\textbf{Briefly describe the main techniques we have learned so far for finding $F_Y(y)$ and $f_Y(y)$.}
+
+The methods we've discussed up to chapter 2.3 involve utilizing the inverse function $g^{-1}(y)$. This is the function that maps y back to x. Acquired by taking the random variable transformation and solving for $x$. 
+
+To get the cdf is really easy if we already know $F_X(x)$. Theorem 2.1.3 involves plugging $g^{-1}(y)$ into $F_X(x)$. Whether the cdf is $F_X(g^{-1}(y))$ or 1 minus that value depends on if the function is monotonically increasing or decreasing. 
+
+As for the pdf, we have another very convenient theorem for that. 2.1.5 leverages knowledge of the pdf of X, $g^{-1}(y)$ and the derivative of this inverse function to create $f_Y(y)$. Super convenient. I have the theorem included further down in the homework, so I won't be repeating it here.
+
+Both of these methods make it very easy to get both the pdf and cdf depending on what information we have available to us.
+
+\subsubsection*{B}
+
+To be honest up till now I haven't put much thought into this. I think it depends on what information I know out the gate and what my end goal is. Do I know $F_X(x)$? I'll probably use theorem 2.1.3, get $F_Y(y)$ and use that to get to the pdf if I need it. If I only know the pdf then I'll likely start with theorem 2.1.5. Maybe I need a better strategy! Also, of course, if the pdf I'm provided isn't monotonous I'll use theorem 2.1.8 and partition out my domain. I'm sure there are more efficient methods for getting from point a to point b, but I've mostly been concerned with execution up till this point.

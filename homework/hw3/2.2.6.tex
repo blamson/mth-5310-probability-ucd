@@ -141,3 +141,47 @@ Alright, let's dive in.
 	&= -\frac{6}{8} \left(- \frac{4}{3}\right) \\
 	&= 1
 \end{align*}
+
+\subsubsection*{Part C}
+
+$f_X(x) = \frac{3}{8}(x+1)^2$, $-1 < x < 1$
+
+\noindent $Y = 1 - X^2$ if $X \leq 0$, and $Y = 1 - X$ if $X > 0$.
+
+Well, we weren't supposed to do Part B but it helps us out a lot here. 
+
+\begin{align*}
+	A_1 &= (-1, 0] & g_1^{-1}(y) &= -\sqrt{1-y} & \frac{d}{dy}g_1^{-1}(y) &= \frac{1}{2}(1-y)^{-1/2}\\
+	A_2 &= (0, 1)  & g_2^{-1}(y) &= 1-y & \frac{d}{dy}g_2^{-1}(y) &= -1
+\end{align*}
+
+\begin{align*}
+	\sum_{i=1}^k f_X(g_i^{-1}(y)) \left| \frac{d}{dy}g_i^{-1}(y) \right| 
+	&= \frac{3}{8} (-\sqrt{1-y} + 1)^2 \cdot \left| \frac{1}{2\sqrt{1-y}} \right| + \left( \frac{3}{8} (1 - y + 1)^2 \cdot |-1| \right) \\
+	&=  \frac{3}{8} (-\sqrt{1-y} + 1)^2 \cdot \frac{1}{2 \sqrt{1-y}} - (2-y)^2 \\
+	&= \frac{3}{8} \int_0^1 (-\sqrt{1-y} + 1)^2 \cdot \frac{1}{2 \sqrt{1-y}} dy - \frac{3}{8} \int_0^1  (2-y)^2 dy \\
+	&= \frac{3}{8} \int_0^1 (-\sqrt{1-y} + 1)^2 \cdot \frac{1}{2 \sqrt{1-y}} dy - \frac{3}{8} \int_0^1 4 - 4y + y^2 dy \\
+	&= \frac{3}{8} \int_0^1 (-\sqrt{1-y} + 1)^2 \cdot \frac{1}{2 \sqrt{1-y}} dy - \frac{3}{8} \left[ 4y - \frac{4y^2}{2} + \frac{y^3}{3} \right]_0^1 \\
+	&= \frac{3}{8} \int_0^1 (-\sqrt{1-y} + 1)^2 \cdot \frac{1}{2 \sqrt{1-y}} dy - \frac{3}{8} \left( 2 + \frac{1}{3} \right) 
+\end{align*}
+
+From here we need to do a u-substition for the part I haven't yet evaluated.
+
+\begin{align*}
+	u &= \sqrt{1-y} \\
+	du &= -\frac{1}{2} \sqrt{1-y} \\
+	dy &= \frac{-2du}{\sqrt{1-y}} \\
+	1-y &= u^2 \\
+	1 - u^2 &= y
+\end{align*}
+
+\begin{align*}
+	\sum_{i=1}^k f_X(g_i^{-1}(y)) \left| \frac{d}{dy}g_i^{-1}(y) \right|
+	&= \frac{3}{8} \int_0^1 (1-u)^2 \cdot \frac{1}{2\sqrt{1-y}} \cdot \frac{-2du}{\sqrt{1-y}} - \frac{3}{8} \left( 2 + \frac{1}{3} \right) \\
+	&= -\frac{3}{8} \int_0^1 (1-u)^2 \cdot \frac{1}{u^2} du - \frac{3}{8} \left( 2 + \frac{1}{3} \right) \\
+	&= -\frac{3}{8} \int_0^1 \frac{1}{u^2}(1-2u+u^2) du - \frac{3}{8} \left( 2 + \frac{1}{3} \right) \\
+	&= -\frac{3}{8} \int_0^1 \frac{1}{u^2} - \frac{2u}{u^2} + 1 du - \frac{3}{8} \left( 2 + \frac{1}{3} \right) \\
+	&= \frac{3}{8} - \frac{1}{u} - 2ln(u) + u \bigg\rvert_{y=0}^{y=1} -  \frac{3}{8} \left( 2 + \frac{1}{3} \right) 
+\end{align*}
+
+And here I'm stuck. We can't evaluate this at 0 because it's undefined, and the limit of that fraction diverges. I definitely screwed something up here, no clue what it was.

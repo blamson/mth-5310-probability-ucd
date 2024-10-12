@@ -1,0 +1,22 @@
+\subsection*{2.18}
+
+Show that if $X$ is a continuous random variable, then 
+
+\[
+	min_a E[|-a|] = E[|X-m|]
+\]
+
+where $m$ is the median of $X$.
+
+So we'll start with the left hand side and see if we end up reaching the right hand side. My interpretation of this notation is we're looking for the value of $a$ that minimizes the left hand side expectation. 
+
+This means we're likely to take a few derivatives so we can minimize and check for a local minima. 
+
+We also have an absolute value here so we'll need to partition out our expectation. We need an integral for $x-a \leq 0$ and $x-a > 0$. 
+
+\begin{align*}
+	E[|x-a|] &= \int_{-\infty}^{\infty} |x-a| f_X(x) dx \\
+	&= \int_{-\infty}^{a} -(x-a) f_X(x) + \int_{a}^{\infty} x - a f_X(x) dx
+\end{align*}
+
+From here I think we take the derivative with respect to $a$ so we can minimize this. But I'm out of time and extremely tired, so I'm going to call it here.

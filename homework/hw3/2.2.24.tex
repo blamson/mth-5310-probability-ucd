@@ -1,0 +1,45 @@
+\subsection*{2.24}
+
+\textbf{Compute $EX$ and $VarX$ for each of the following probability distributions.}
+
+\subsubsection*{A}
+
+$f_X(x) = ax^{a-1}$; $0<x<1$; $a>0$
+
+\begin{align*}
+	E[X] &= \int_{x=0}^{x=1} x \cdot ax^{a-1} dx \\
+	&= a \int x \cdot x^{1-x} dx \\
+	&= a \int x^1 dx \\
+	&= a \cdot \frac{x^{a+1}}{a+1} \bigg\rvert^{x=1}_{x=0} \\
+	&= \frac{a}{a+1} 
+\end{align*}
+
+\begin{align*}
+	Var[X] &= E[X^2] - E[X]^2 \\
+	&= \left( a \int_{x=0}^{x=1} x^2 \cdot x^{a-1} dx \right) - \left(\frac{a}{a+1}\right)^2 \\
+	&= a \cdot \frac{x^{a+2}}{a+2} \bigg\rvert_{x=0}^{x=1} - \left(\frac{a}{a+1}\right)^2 \\
+	&= \frac{a}{a+2} - \left( \frac{a}{a+1} \right)^2
+\end{align*}
+
+\pagebreak
+
+
+\subsubsection*{B}
+
+
+$f_X(x) = \frac{1}{n}$; $x=1,2,\cdots,n$; $n \in N$
+
+\begin{align*}
+	E[X] &= \sum_{x=1}^n x \cdot \frac{1}{n} \\
+	&= \frac{1}{n} \sum_{x=1}^n x & \text{(This sum has a known formula.)}\\
+	&= \frac{1}{n} \cdot \frac{n(n+1)}{2} \\
+	&= \frac{n+1}{2}
+\end{align*}
+
+\begin{align*}
+	Var[X] &= E[X^2] - E[X]^2 \\
+	&= \left( \sum_{x=1}^n x^2 \frac{1}{n} \right) - \left( \frac{n+1}{2} \right)^2 \\
+	&= \left( \frac{1}{n} \cdot \sum x^2 \right) - \left( \frac{n+1}{2} \right)^2 & \text{(This sum is also a known formula)} \\
+	&= \frac{1}{n} \cdot \frac{n(n+1)(2n+1)}{6} - \left( \frac{n+1}{2} \right)^2 \\
+	&= \frac{(n+1)(2n+1)}{6} - \left( \frac{n+1}{2} \right)^2 
+\end{align*}

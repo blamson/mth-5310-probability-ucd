@@ -1,0 +1,45 @@
+\subsection*{2}
+
+\begin{theorem}
+	Let $X$ have continuous cdf $F_X(x)$ and define the random variable $Y$ as $Y = F_X(x)$. Then $Y$ is uniformly distributed on $(0,1)$. That is, $P(Y \leq y) = y$, $0 < y < 1$
+\end{theorem}
+
+\subsubsection*{A}
+
+\textbf{Read theorem 2.1.10 and briefly state, in your own words, the main point of the theorem}
+
+The main point of this theorem is that it tells us that every continuous random variables CDF has a uniform distribution. At least if I'm understanding it correctly, that feels very counterintuitive. Gonna be honest this is going over my head a little bit. 
+
+\subsubsection*{B}
+
+If the random variable $X$ had pdf:
+
+\[
+	f(x) = \begin{cases}
+		\frac{x-1}{2} & 1 < x < 3 \\
+		0 & \text{otherwise}
+	\end{cases}
+\]
+
+find a monotone function $u(x)$ s.t. the random variable $Y=u(X) ~ Unif(0,1)$.
+
+\noindent \textbf{Solution}
+
+Because of 2.1.10 we just need to solve for $F_X(x)$. Let's do that.
+
+\begin{align*}
+	P(X \leq x) = F_X(x) &= \int_1^x f_X(t) dt \\
+	&= \int_1^x \frac{t-1}{2} \\
+	&= \frac{1}{2} \int_1^x t-1 dt \\
+	&= \frac{1}{2} \left( \frac{t^2}{2} - t \right) \bigg\rvert_{t=1}^{t=x} \\
+	&= \frac{1}{2} \left( \left( \frac{x^2}{2} - 2 \right) - \left( \frac{1}{2} - 1 \right) \right) \\
+	&= \frac{1}{2} \left( \frac{x^2}{2} - x + \frac{1}{2} \right)
+\end{align*}
+
+\[
+	F_X(x) = \begin{cases}
+		0 & x < 1 \\
+		\frac{1}{2} \left( \frac{x^2}{2} - x + \frac{1}{2} \right) & 1 < x < 3 \\
+		1 & x \geq 3
+	\end{cases}
+\]
