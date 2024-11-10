@@ -1,0 +1,55 @@
+\subsection*{2.30}
+
+\textbf{Find the moment generating function corresponding to the following:}
+
+\subsubsection*{C}
+
+$f(x) = \frac{1}{2\beta}e^{-|x-\alpha|/\beta}$, $-\infty < x < \infty$,  $-\infty < \alpha < \infty$, $\beta > 0$
+
+This problem is just a very very long computation. Strap in.
+
+\begin{align*}
+	M_X(t) &= E[e^{tx}] \\
+	&= \int_{-\infty}^{\infty} e^{tx} f_X(x) dx \\
+	&= \int_{-\infty}^{\infty} e^{tx} \frac{1}{2\beta}e^{-|x-\alpha|/\beta} dx \\
+	&= \frac{1}{2\beta} \int_{-\infty}^{\alpha} e^{tx} e^{-( -(x-\alpha ))/\beta} dx + \frac{1}{2\beta}\int_{\alpha}^{\infty} e^{tx} e^{-(x-\alpha )/\beta} dx \\
+	&= \frac{1}{2\beta} \int_{-\infty}^{\alpha} exp\left[ tx + \frac{x-a}{\beta} \right] dx +  \frac{1}{2\beta} \int^{\infty}_{\alpha} exp\left[ tx - \frac{x-a}{\beta} \right] dx \\
+	&= \frac{1}{2\beta} \int_{-\infty}^{\alpha} exp\left[ tx + \frac{x}{\beta} - \frac{\alpha}{\beta} \right] dx + \frac{1}{2\beta} \int^{\infty}_{\alpha} exp\left[ tx - \frac{x}{\beta} + \frac{\alpha}{\beta} \right] dx \\
+	&= \frac{1}{2\beta} \int_{-\infty}^{\alpha} e^{tx}e^{x/\beta}e^{-\alpha/\beta} dx + \frac{1}{2\beta} \int^{\infty}_{\alpha}  e^{tx}e^{-x/\beta}e^{\alpha/\beta} dx \\
+	&= \frac{e^{-\alpha/\beta}}{2\beta} \int_{-\infty}^{\alpha} e^{tx}e^{x/\beta} dx + \frac{e^{\alpha/\beta}}{2\beta} \int^{\infty}_{\alpha} e^{tx}e^{-x/\beta} dx \\
+	&= \frac{e^{-\alpha/\beta}}{2\beta} \int_{-\infty}^{\alpha} e^{x(t+\frac{1}{\beta})} dx + \frac{e^{\alpha/\beta}}{2\beta} \int^{\infty}_{\alpha} e^{x(t-\frac{1}{\beta})} dx \\
+	&= \frac{e^{-\alpha/\beta}}{2\beta} \left[ e^{x(t + \frac{1}{\beta})} \cdot \frac{1}{t + \frac{1}{\beta}} \right]_{x=-\infty}^{x=a}
+	+ \frac{e^{\alpha/\beta}}{2\beta} \left[ e^{x(t - \frac{1}{\beta})} \cdot \frac{1}{t - \frac{1}{\beta}} \right]^{x=\infty}_{x=a} \\
+	&= \frac{e^{-\alpha/\beta}}{2\beta} \left[ \frac{e^{a(t + \frac{1}{\beta})}}{t + \frac{1}{\beta}} - 0 \right] 
+	+ \frac{e^{\alpha/\beta}}{2\beta} \left[0 - \frac{e^{a(t - \frac{1}{\beta})}}{t - \frac{1}{\beta}} \right] \\
+	&= \frac{e^{-\frac{\alpha}{\beta}} \cdot e^{\alpha(t + \frac{1}{\beta})}}{2\beta(t + \frac{1}{\beta})}  
+	- \frac{e^{\frac{\alpha}{\beta}} \cdot e^{\alpha(t - \frac{1}{\beta})}}{2\beta(t - \frac{1}{\beta})} \\
+	&= \frac{exp[\alpha t + \frac{\alpha}{\beta} - \frac{\alpha}{\beta}]}{2\beta(t + \frac{1}{\beta})} 
+	- \frac{exp[\alpha t + \frac{\alpha}{\beta} - \frac{\alpha}{\beta}]}{2\beta(t - \frac{1}{\beta})} \\
+	&= \frac{1}{2\beta} \left( \frac{e^{\alpha t}}{t + \frac{1}{\beta}} -   \frac{e^{\alpha t}}{t - \frac{1}{\beta}}\right)
+\end{align*}
+
+\begin{align*}
+	M_X(t) &= \frac{1}{2\beta} \left( \frac{e^{\alpha t} (t - \frac{1}{\beta})}{(t + \frac{1}{\beta})(t - \frac{1}{\beta})} - \frac{e^{\alpha t} (t + \frac{1}{\beta})}{(t + \frac{1}{\beta})(t - \frac{1}{\beta})}  \right) \\
+	&= \frac{-2e^{\alpha t} \cdot \frac{1}{\beta}}{2\beta t^2 - \frac{2}{\beta} } \\
+	&= \frac{-e^{\alpha t}}{1 - \beta^2 t^2}
+\end{align*}
+
+\subsubsection*{D}
+
+$f(x) = {r + x - 1 \choose x}p^r (1-p)^x$, $x=0,1,\cdots$, $0<p<1$, $r>0$ an integer. 
+
+This problems a little weird. It's a negative binominal distribution so this has a known MGF already. Trying to derive it myself I get stuck though.
+
+Where I get is:
+
+\begin{align*}
+	M_X(t) &= E[e^{tx}] \\
+	&= \sum e^{tx} {r + x - 1 \choose x}p^r (1-p)^x \\
+	&= p^r \sum e^{tx} {r + x - 1 \choose x} (1-p)^x \\
+	&= p^r \sum {r + x - 1 \choose x} (e^t(1-p))^x \\
+\end{align*}
+
+That final line is to get this in the same structure as the original negative binomial. If we think of $(e^t(1-p))^x$ as our $(1-p)^x$ term we can imagine that this is part of a negative binomial with $p=(1-e^t(1-p))^r$. 
+
+But I'm not sure where to go from there or if that even helps.

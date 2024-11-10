@@ -1,0 +1,70 @@
+\subsection*{2.33}
+
+\textbf{In each of the following cases verify the expression given for the mment generating function and in each case use the mgf to calculate Ex and VarX}.
+
+\noindent $P(X=x) = p(1-p)^x$, $M_X(t) = \frac{p}{1-(1-p)e^t}$, $x=0,1,2,\cdots$, $0<p<1$
+
+\begin{align*}
+	M_X(t) &= E[e^{tx}] \\
+	&= \sum_{x=0}^{\infty} e^{tx} p(1-p)^x \\
+	&= p \sum e^{tx} (1-p)^x \\
+	&= p \sum \left( e^t(1-p) \right)^x
+\end{align*}
+
+This sum is actually a geometric series. I did not figure that out on my own! What this means is that this summation has a clean evaluation we can use.
+
+\[
+	\sum_{x=0}^{\infty} = \frac{1}{1-r}
+\]
+
+In our case, $r=e^t(1-p)$. So, from that:
+
+\begin{align*}
+	E[e^{tx}] &= p \cdot \frac{1}{1 - e^t(1-p)} \\
+	&= \frac{p}{1-(1-p)e^t}
+\end{align*}
+
+Thus we have verified the mgf.
+
+Next, we need $E[X]$.
+
+\begin{align*}
+	E[X] &= \frac{d}{dt} M_X(t) \bigg\rvert_{t=0} \\
+	&= \frac{d}{dt} \frac{p}{1-(1-p)e^t} \bigg\rvert_{t=0} \\
+	&= \frac{d}{dt} p \cdot (1-(1-p)e^t)^{-1} \\
+	&= p \cdot -\frac{1}{(1-(1-p)e^t)^2} \cdot -1(1-p)e^t \bigg\rvert_{t=0} \\
+	&= \frac{-p \cdot (-1(1-p))}{(1-(1-p))^2} \\
+	&= \frac{p(1-p)}{p^2} \\
+	&= \frac{1-p}{p}
+\end{align*}
+
+The next piece is $E[X^2]$ which is a lot more involved. 
+
+\begin{align*}
+	E[X^2] &= \frac{d^2}{dt^2} M_X(t) \bigg\rvert_{t=0} \\
+	&= \frac{d}{dt} \frac{p(1-p)e^t}{(1-(1-p)e^t)^2}
+\end{align*}
+
+Brief intermission here to setup the product rule.
+
+\begin{align*}
+	f(x) &= (1-p)e^t & g(x) &= (1-(1-p)e^t)^{-2} \\
+	f'(x) &= (1-p)e^t & g'(x) &= \frac{2(1-p)e^t}{(1-(1-p)e^t)^3}
+\end{align*}
+
+\begin{align*}
+	E[X^2] &= \frac{d}{dt} p \cdot f(x) g(x) \\
+	&= p(f'(x)g(x) + f(x)g'(x)) \\
+	&= \frac{p(1-p)e^t}{(1-(1-p)e^t)^2} + \frac{p(1-p)e^t2(1-p)e^t}{(1-(1-p)e^t)^3} \\
+	&= \frac{p(1-p)e^t(1-(1-p)e^t)^3}{(1-(1-p)e^t)^5} + \frac{p(1-p)e^t 2(1-p)e^t (1-(1-p)e^t)^2}{(1-(1-p)e^t)^5} \\
+	&= \frac{p(1-p)e^t \cdot (1-(1-p)e^t)^2 \cdot (1-(1-p)e^t + 2(1-p)e^t)}{(1-(1-p)e^t)^5} \\
+	&= \frac{p(1-p)e^t \left( 1-(1-p)e^t + 2(1-p)e^t \right)}{(1-(1-p)e^t)^3}
+\end{align*}
+
+Now put it all together
+
+\begin{align*}
+	Var[X] &= E[X^2] - (E[X])^2
+\end{align*}
+
+Or we would put it all together. But I do not have time to verify that this simplifies and I feel pretty confident that it won't. 

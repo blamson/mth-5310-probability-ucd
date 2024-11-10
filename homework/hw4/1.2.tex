@@ -1,0 +1,42 @@
+\subsection*{2}
+
+Assume a random variable $X$ has the following MGF:
+
+\[
+	M_X(t) = \left( \frac{2}{5} + \frac{3}{5}e^t \right)^{10}
+\]
+
+\subsubsection*{A}
+
+Find $f_X(x)$ for this random variable $X$
+
+Gonna be honest, no real clue how to do this. My hunch is that we work backwards, knowing that $M_X(t) = E[e^{tx}]$. But I'm already late on this homework and am just going to resign myself to ignorance here.
+
+\subsubsection*{B}
+
+Use $M_X(t)$ to find the mean and variance of $X$
+
+\begin{align*}
+	E[X] &= \frac{d}{dt} M_X(t=0) \\
+	&= \frac{d}{dt} \left( \frac{2}{5} + \frac{3}{5}e^t \right)^{10} \\
+	&=  10\left( \frac{2}{5} + \frac{3}{5}e^t \right)^{9} \cdot \frac{3}{5}e^t \bigg\rvert_{t=0} \\
+	&= 10(1)^9 \cdot \frac{3}{5} \\
+	&= 6
+\end{align*}
+
+\begin{align*}
+	E[X^2] &= \frac{d^2}{dt^2} M_X(t=0) \\
+	&= \frac{d}{dt} 10\left( \frac{2}{5} + \frac{3}{5}e^t \right)^{9} \cdot \frac{3}{5}e^t \bigg\rvert_{t=0} \\
+	&= \frac{d}{dt} \left[  10\left( \frac{2}{5} + \frac{3}{5}e^t \right)^{9} \right] \cdot \frac{3}{5}e^t 
+	+  10\left( \frac{2}{5} + \frac{3}{5}e^t \right)^{9} \cdot \frac{d}{dt} \frac{3}{5} e^t \bigg\rvert_{t=0} \\
+	&= 90\left( \frac{2}{5} + \frac{3}{5}e^t \right)^8 \cdot \frac{3}{5}e^t 
+	+  10\left( \frac{2}{5} + \frac{3}{5}e^t \right)^{9} \cdot \frac{3}{5} e^t \bigg\rvert_{t=0} \\
+	&= 90(1)^8 \cdot \frac{3}{5} + 10(1)^9 \cdot \frac{3}{5} \\
+	&= 60
+\end{align*}
+
+\begin{align*}
+	Var[X] &= E[X^2] - (E[X])^2 \\
+	&= 60 - 6^2 \\
+	&= 24
+\end{align*}

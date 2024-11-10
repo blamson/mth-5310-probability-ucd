@@ -1,0 +1,38 @@
+\subsection*{1}
+
+Assume a random variable $X$ always equals a constant value $c$.
+
+\subsubsection*{A}
+
+Find the moment generating function for $X$
+
+\begin{align*}
+	M_X(t) &= E[e^{tx}] \\
+	&= E[e^{tc}] \\
+	&= e^{tc}
+\end{align*}
+
+The explanation here is that because $X=c \forall x$ the value inside the expectation becomes a constant as well. The expectation of a constant is just the constant. 
+
+\subsubsection*{B}
+
+Use the mgf to find the mean and variance of $X$
+
+\begin{align*}
+	E[X] &= \frac{d}{dt} M_X(t=0) & E[X^2] &= \frac{d^2}{dt^2} M_X(0) \\
+	&= \frac{d}{dt} e^{tc} \bigg\rvert_{t=0} & &= \frac{d}{dt} ce^{tc} \bigg\rvert_{t=0} \\
+	&= ce^{0c} & &= c^2 e^{0c} \\
+	&= c & &= c^2
+\end{align*}
+
+\begin{align*}
+	Var[X] &= E[X^2] - (E[X])^2 \\
+	&= c^2 - c^2 \\
+	&= 0
+\end{align*}
+
+\subsubsection*{C}
+
+Explain why these values are logical.
+
+The expected value of a constant is a constant. So that ones straightforward enough I believe. A constant is also, well, constant. It doesn't vary at all. Therefore a variance of 0 makes sense.

@@ -1,0 +1,11 @@
+\subsection*{2.39}
+
+Gonna work through this one without much explanation as I am short on time. We're just using Leibnitz Rule to evaluate the following:
+
+\begin{align*}
+	\frac{d}{dx} \int_0^x e^{-\lambda t} dt &= f(x) \cdot \frac{d}{dx} x - 0 + \int_0^x \left( \frac{d}{dx} e^{-\lambda t} \right) dt \\
+	&= e^{-\lambda x} \cdot 1 + \int_0^x 0 dt \\
+	&= e^{-\lambda x}
+\end{align*}
+
+To explain what happened here is that our lower bound being 0 removed a good chunk of the work here. Also our function inside the integral evaluates to 0 when differentiated with respect to x as it has no x terms. Thus that whole integral evaluates to 0 as well. Leaving only one term left.

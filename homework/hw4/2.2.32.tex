@@ -1,0 +1,29 @@
+\subsection*{2.32}
+
+\textbf{Let $M_X(t)$ be the moment generating function of $X$, and define $S(t) = log(M_X(t))$. Show that:}
+
+\begin{align*}
+	\frac{d}{dt} S(t) \bigg\rvert_{t=0} &= E[X] & \frac{d^2}{dt^2} S(t) \bigg\rvert_{t=0} &= Var[X] 
+\end{align*}
+
+\begin{align*}
+	\frac{d}{dt} S(t) \bigg\rvert_{t=0} &= \frac{d}{dt} log(M_X(t)) \bigg\rvert_{t=0}\\
+	&= \frac{1}{M_X(t)} \cdot \frac{d}{dt} M_X(t) \bigg\rvert_{t=0} \\
+	&= \frac{1}{1} \cdot E[X] \\
+	&= E[X]
+\end{align*}
+
+\begin{align*}
+	\frac{d^2}{dt^2} S(t) \bigg\rvert_{t=0} &= \frac{d^2}{dt^2} log(M_X(t))  \bigg\rvert_{t=0}\\
+	&= \frac{d}{dt} \left( \frac{M_X'(t)}{M_X(t)} \right) \bigg\rvert_{t=0}  \\
+	&= \frac{d}{dt} M_X'(t) \cdot \frac{1}{M_X(t)} + M_X'(t) \cdot \frac{d}{dt} \frac{1}{M_X(t)} \bigg\rvert_{t=0}\\
+	&= M_X''(t) \cdot \frac{1}{M_X(t)} + M_X'(t) \cdot -\frac{M_X'(t)}{M_X(t)^2} \bigg\rvert_{t=0}\\
+	&= \frac{M_X''(t)}{M_X(t)} - \frac{M_X'(t)^2}{M_X(t)^2} \bigg\rvert_{t=0}\\
+	&= \frac{M_X''(t) M_X(t)^2}{M_X(t)^3} - \frac{M_X'(t)^2 M_X(t)}{M_X(t)^3}\bigg\rvert_{t=0} \\
+	&= \frac{M_X''(t) M_X(t)^2 - M_X'(t)^2 M_X(t)}{M_X(t)^3} \bigg\rvert_{t=0} \\
+	&= \frac{M_X(t)\left( M_X''(t) M_X(t) - M_X'(t)^2 \right)}{M_X(t)^3} \bigg\rvert_{t=0} \\ 
+	&= \frac{M_X''(t) M_X(t) - M_X'(t)^2}{M_X(t)^2} \bigg\rvert_{t=0} \\
+	&=  \frac{M_X''(0) M_X(0) - M_X'(0)^2}{M_X(0)^2} \\
+	&= \frac{E[X^2] \cdot 1 - (E[X])^2}{1} \\
+	&= E[X^2] - (E(X))^2
+\end{align*}

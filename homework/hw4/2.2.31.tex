@@ -1,0 +1,13 @@
+\subsection*{2.31}
+
+\textbf{Does a distribution exist for which $M_X(t) = \frac{t}{1-t}$, $|t| < 1$? If yes, find it. If not, prove it.}
+
+To tackle this problem we want to run through some sanity checks for how we know moment generating functions should operate. If it passes these checks, we find find the distribution.
+
+Firstly, we know that $M_X(t) = E[e^{tx}]$. Therefore, $M_X(0) = E[e^{0x}] = 1$. Does our given mgf align with that?
+
+\noindent $M_X(0) = \frac{0}{1-0} = 0 \neq 1$.
+
+Because it failed this basic check this mgf cannot have a distribution.
+
+
