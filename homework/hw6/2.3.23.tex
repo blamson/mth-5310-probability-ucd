@@ -1,0 +1,65 @@
+\subsection*{3.23}
+
+The Pareto distribution, with parameters $\alpha, \beta$ has pdf:
+
+\[
+	f(x) = \frac{\beta \alpha^{\beta}}{x^{\beta + 1}}, \; \alpha < x < \infty, \; \alpha, \beta > 0
+\]
+
+\subsubsection*{A}
+
+Verify that $f(x)$ is a pdf.
+
+For this we just need to verify this whole thing integrates to 1. 
+
+\begin{align*}
+	\int_{\alpha}^{\infty} \frac{\beta \alpha^{\beta}}{x^{\beta + 1}} dx &= \beta \alpha^{\beta} \int_{\alpha}^{\infty} \frac{1}{x^{\beta + 1}} dx \\
+	&= \beta \alpha^{\beta} \left[ -1 \cdot x^{-\beta} \cdot \beta^{-1} \right]_{x=\alpha}^{x=\infty} \\
+	&= \beta \alpha^{\beta} \alpha^{-\beta} \beta^{-1} \\
+	&= 1
+\end{align*}
+
+\subsubsection*{B}
+
+Derive the mean and variance of this distribution.
+
+For this problem we will solve for a generic $E[X^n]$ so we can plug in stuff easily later.
+
+\begin{align*}
+	E[X^n] &= \int_{\alpha}^{\infty} x^n \frac{\beta \alpha^{\beta}}{x^{\beta + 1}} dx \\
+	&= \beta \alpha^{\beta} \int_{\alpha}^{\infty} \frac{x^n}{x^{\beta + 1}} dx \\
+	&= \beta \alpha^{\beta} \int_{\alpha}^{\infty} x^{n - \beta - 1} dx \\
+	&= \beta \alpha^{\beta} \left[ \frac{1}{n - \beta} \cdot x^{n-\beta} \right]_{x=\alpha}^{x=\infty}
+\end{align*}
+
+Here we need to pause and justify next steps. There are two possible outcomes of this evaluation. If $n \geq \beta$ this diverges. We can't have that. We have to assume $n < \beta$ so that this evaluation works. 
+
+A downstream effect of this is that $1/(n - \beta)$ is now a negative scalar. That'll be important later.
+
+\begin{align*}
+	E[X^n] &= \beta \alpha^{\beta} \cdot \frac{1}{n-\beta} \left( 0 - \alpha^{n - \beta} \right) \\
+	&= \frac{\beta \alpha^{\beta} \cdot -1 \cdot \alpha^{n-\beta}}{n-\beta} \\
+	&= \frac{\beta \alpha^{\beta} \cdot -\alpha^{n-\beta}}{-1 \cdot (\beta - n)} \\
+	&= \frac{\beta \alpha^n}{\beta - n}
+\end{align*}
+
+From here, easy.
+
+\begin{align*}
+	E[X^1] &= \frac{\beta \alpha}{\beta - 1} & E[X^2] &= \frac{\beta \alpha^2}{\beta - 2} \\
+	Var[X] &= \frac{\beta \alpha^2}{\beta - 2} - \left(\frac{\beta \alpha}{\beta - 1}\right)^2
+\end{align*}
+
+\subsubsection*{C}
+
+Prove that the variance does not exist if $\beta \leq 2$
+
+From the definition of the Gamma, $\beta > 0$. So we know that $0 < \beta \leq 2$. 
+
+Lets look back on the generic evaluation of the integration from earlier but use $n=2$ for the second moment:
+
+\[
+	E[X^2] =  \beta \alpha^{\beta} \left[ \frac{1}{2 - \beta} \cdot x^{2-\beta} \right]_{x=\alpha}^{x=\infty}
+\]
+
+Because $\beta \leq 2$ the evaluation diverges so the variance does not exist.

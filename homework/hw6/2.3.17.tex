@@ -1,0 +1,30 @@
+\subsection*{3.17}
+
+Establish a formula similar to (3.3.18) for the gamma distribution. If $X \sim gamma(\alpha, \beta)$, then for any positive constant $v$:
+
+\[
+	E[X^v] = \frac{\beta^v \Gamma(v + \alpha)}{\Gamma(\alpha)}
+\]
+
+The overall goal here is to get $E[X^v]$ and see if we can't right it in that form. We'll be using a similar trick to (3.3.18) in this problem to handle the integration in a very clean way. I'll point it out when that happens.
+
+First off, the pdf we'll be integrating over:
+
+\[
+	f_X(x) = \frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1} e^{-x/\beta}, \; 0 \leq x \leq \infty, \; \alpha, \beta > 0
+\]
+
+\begin{align*}
+	E[X^v] &= \int_0^{\infty} x^v \frac{1}{\Gamma(\alpha)\beta^{\alpha}} x^{\alpha - 1} e^{-x/\beta} dx \\
+	&=  \frac{1}{\Gamma(\alpha)\beta^{\alpha}} \int_0^{\infty} x^v \cdot x^{\alpha - 1} e^{-x/\beta} dx \\
+	&=  \frac{1}{\Gamma(\alpha)\beta^{\alpha}} \int_0^{\infty} x^{(v+\alpha) - 1} e^{-x/\beta} dx \\ 
+\end{align*}
+
+Here is where the trick is. The integrand is now in the form of the kernel of a $Gamma(n+\alpha, \beta)$ random variable. Essentially the kernel is the main part of the function that remains when constants are removed. To clarify this, when you integrate over the kernel for all possible values, you get output that when scaled by the constants you removed gets you 1. So, it would just be the reciprocal of those scalars! 
+
+We have the kernel of a slightly different gamma random variable however. So we won't get 1 at the end of this. ANYWAY!
+
+\begin{align*}
+	E[X^v] &= \frac{\Gamma(v + \alpha) \beta^{v+\alpha}}{\Gamma(\alpha) \beta^{\alpha}} \\
+	&= \frac{\beta^{v} \Gamma(v + \alpha)}{\Gamma(\alpha)}
+\end{align*}
