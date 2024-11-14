@@ -1,0 +1,34 @@
+\subsection*{3.24d}
+
+Derive the form of the pdf. Verify that it is a pdf. Calculate the mean and variance.
+
+\noindent If $X \sim Gamma(3/2, \beta)$, then $Y = (X/\beta)^{1/2}$ has the Maxwell distribution.
+
+Here we have a scaled and transformed gamma. Let's start with what we'll need for the transformation.
+
+\begin{align*}
+	y &= \left( \frac{X}{\beta} \right)^{\frac{1}{2}} \\
+	y^2 &= \frac{X}{\beta} \\
+	x &= \beta y^2 = g^{-1}(y) \\
+	\frac{d}{dy} g^{-1}(y) &= \frac{d}{dy} \beta y^2 \\
+	&= 2 \beta y
+\end{align*}
+
+Now the actual pdf.
+
+\begin{align*}
+	f_X(x| \alpha, \beta) &= \frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha - 1} e^{-x/\beta}, \; 0 \leq x < \infty, \; \alpha, \beta > 0 \\
+	f_X(x | \alpha = 3/2, \beta ) &= \frac{1}{\Gamma(3/2) \beta^{3/2}} x^{(3/2) - 1} e^{-x/\beta} \\
+	&= \frac{1}{\Gamma(3/2) \beta^{3/2}} x^{1/2} e^{-x/\beta} \\
+\end{align*}
+
+Now apply the transformation.
+
+\begin{align*}
+	f_Y(y) &= f_X(g^{-1}(y)) \cdot \left| \frac{d}{dy} g^{-1}(y) \right| \\
+	&=  \frac{1}{\Gamma(3/2) \beta^{3/2}} (\beta y^2)^{1/2} e^{-\beta y^2/\beta} \cdot \left| 2 \beta y \right|\\
+	&=  \frac{\beta^{1/2} \cdot \beta \cdot 2y}{\Gamma(3/2) \beta^{3/2}} \cdot y \cdot e^{-y^2} \\
+	&= \frac{2}{\Gamma(\frac{3}{2})} y^2 e^{-y^2}
+\end{align*}
+
+From here I would do the rest of the problem. Verifying the pdf, and finding $E[Y]$ and $Var[Y]$ but I'm short on time.

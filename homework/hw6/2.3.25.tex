@@ -1,0 +1,37 @@
+\subsection*{3.25}
+
+Suppose the random variable $T$ is the length of life of an object (possibly the lifetime of an electrical component or of a subject given a particular treatment). The hazard function $h_T(t)$, associated with the random variable $T$, is defined by:
+
+\[
+	h_T(t) = \lim_{\delta \to 0} \frac{P\left( t \leq T < t + \delta | T \geq t \right)}{\delta}
+\]
+
+Thus, we can interpret $h_T(t)$ as the rate of change of the probability that the object survives a little past time t, given that the object survives to time t. Show that if $T$ is a continuous random variable, then:
+
+\[
+	h_T(t) = \frac{f_T(t)}{1 - F_T(t)} = -\frac{d}{dt} ln(1 - F_T(t))
+\]
+
+\noindent \textbf{Solution}
+
+This problem seems like a lot to take in but it's really not too crazy. We want to get from that probability inequality to the pdf and cdf fraction. This actually isn't too difficult.
+
+\begin{align}
+	h_T(t) &= \lim_{\delta \to 0} \frac{P\left( t \leq T < t + \delta | T \geq t \right)}{\delta} \\
+	&= \lim_{\delta \to 0} \frac{1}{\delta} \cdot \frac{P\left( t \leq T < t + \delta \cap T \geq t \right)}{P(T \geq t)} \\
+	&= \lim_{\delta \to 0} \frac{1}{\delta} \cdot \frac{P\left( t \leq T < t + \delta \right)}{P(T \geq t)} \\
+	&= \lim_{\delta \to 0} \frac{1}{\delta} \cdot \frac{F_T(t + \delta) - F_T(t)}{1 - F_T(t)} \\
+	&= \lim_{\delta \to 0} \frac{F_T(t + \delta) - F_T(t)}{\delta} \cdot \frac{1}{1 - F_T(t)} \\
+	&= \frac{f_T(t)}{1 - F_T(t)}
+\end{align}
+
+To justify all of that, those inequalities are easily re-written as cdfs. As for where the pdf comes from, that's from the fundamental theorem of calculus. Pages 229 to 230 of Essential Calculus by James Stewart has a breakdown on why that first chunk in (5) collapses down to just the pdf. I did not come to this answer on my own, though I did have to put in the work to justify it to myself. This textbook problem is perfect evidence as to why every math student should protect every textbook they have ever owned with their lives.
+
+\pagebreak
+
+As for the final part of this problem, it is pretty simple. 
+
+\begin{align*}
+	- \frac{d}{dt} ln(1 - F_T(t)) &= -1 \cdot \frac{-f_T(t)}{1 - F_T(t)} \\
+	&=  \frac{f_T(t)}{1 - F_T(t)} 
+\end{align*}

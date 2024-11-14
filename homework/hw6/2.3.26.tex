@@ -1,0 +1,24 @@
+\subsection*{3.26a}
+
+If $T \sim exp(\beta)$, then $h_T(t) = 1/\beta$
+
+\[
+	f_T(t|\beta) = \frac{1}{\beta} e^{-t/\beta}, \; x\geq0, \; \beta > 0
+\]
+
+First we need to get our CDF so we can plug both it and the PDF into the hazard function.
+
+\begin{align*}
+	F_T(t) &= \int_0^t f_T(x) dx \\
+	&= \frac{1}{\beta} \int_0^t e^{-x/\beta} dx \\
+	&= \frac{1}{\beta} \left[ -\beta e^{-x/\beta} \right]_0^t \\
+	&= -1\left( e^{-t/\beta} - 1 \right) \\
+	&= 1 - e^{-t/\beta}
+\end{align*}
+
+\begin{align*}
+	h_T(t) &= \frac{f_T(t)}{1 - F_T(t)} \\
+	&= \frac{\frac{1}{\beta} e^{-t/\beta}}{1-\left( 1-e^{-t/\beta} \right)} \\
+	&= \frac{e^{-t/\beta}}{\beta e^{-t/\beta}} \\
+	&= \frac{1}{\beta}
+\end{align*}

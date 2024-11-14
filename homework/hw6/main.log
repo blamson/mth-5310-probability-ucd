@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  10 NOV 2024 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.3.20)  13 NOV 2024 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,17 +681,18 @@ your preamble.
 t/fonts/map/pdftex/updmap/pdftex.map}
 
 ]) [2] (./2.3.17.tex) (./2.3.23.tex
-[3] [4]) [5] (./main.aux)
+[3] [4]) (./2.3.24.tex [5]) (./2.3.25.tex [6] [7]) (./2.3.26.tex [8]) [9]
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22743 strings out of 474116
- 605709 string characters out of 5733619
- 1938187 words of memory out of 5000000
- 44756 multiletter control sequences out of 15000+600000
+ 22763 strings out of 474116
+ 606012 string characters out of 5733619
+ 1939187 words of memory out of 5000000
+ 44767 multiletter control sequences out of 15000+600000
  560041 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,12n,112p,723b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -708,10 +709,10 @@ ve/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/home
 brew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb></opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (5 pages, 120385 bytes).
+Output written on main.pdf (9 pages, 135872 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
